@@ -1,0 +1,47 @@
+<html>   
+<head>   
+    <title> CALCULATE THE TIME YEARS MONTHS AND DAYS BETWEEN THE TWO DATES </title>   
+      <script>  
+       function daysDifference() {  
+        
+         var dateI1 = document.getElementById("dateInput1").value;  
+         var dateI2 = document.getElementById("dateInput2").value;  
+  
+        
+         var date1 = new Date(dateI1);  
+         var date2 = new Date(dateI2);  
+         
+         var time =(date2.getTime() - date1.getTime()) / 1000;
+         var year  = Math.abs(Math.round((time/(60 * 60 * 24))/365.25));
+         var month = Math.abs(Math.round(time/(60 * 60 * 24 * 7 * 4)));
+         var days = Math.abs(Math.round(time/(3600 * 24)));
+         
+  
+         return document.getElementById("result").innerHTML =   
+           "time in seconds="  + time  +" year=" +  year  + " month="+ month  +" days="+ days;  
+                    }  
+      </script>    
+</head>    
+<body>   
+    
+    <h1 style="color:080808 " align="Center">    
+           CALCULATE THE TIME, YEARS, MONTHS AND DAYS BETWEEN THE TWO DATES   
+        <br> <br> </h1>   
+    
+        <p align="Center"> <b> Enter the date first=   </b>   
+        <input type="date" id="dateInput1">   
+        <br> <br>   
+          
+        <p align="Center"> <b> Enter the date second   </b>   
+        <input type="date" id="dateInput2">   
+        <br> <br>       
+    
+        <button onclick="daysDifference()">   
+          CALCULATE THE DIFFERENCES  
+        </button>   
+    </p>   
+    
+    <h3 style="color:	#0F32A8" id="result" align="center"></h3>   
+    
+</body>    
+</html>
